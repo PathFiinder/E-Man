@@ -1,0 +1,54 @@
+<nb-layout>
+  <nb-layout-column>
+    <div class="view-container">
+      <div class="view-container__login-part">
+
+        <div class="login-part-container">
+
+          <div class="login-part-container__logo">
+            <img src="assets/images/logo_3.png" alt="E-Man Logo" class="login-part-container__logo--img">
+          </div>
+
+          <p class="login-part-container__title">Sign in</p>
+          <div class="login-part-container__title-describe">
+            <span class="login-part-container__title-describe--text">Don't have an account? </span>
+            <span class="login-part-container__title-describe--link">Sign up</span>
+          </div>
+
+          <div class="login-part-container__form-container">
+            <form [formGroup]="formGroup">
+
+              <div>
+                <p class="required">Email address</p>
+                <nb-form-field>
+                 <input nbInput type="email" fullWidth formControlName="email" placeholder="Enter your email">
+                </nb-form-field>
+              </div>
+
+              <div>
+                <p class="required">Password</p>
+                <nb-form-field>
+                  <input nbInput [type]="getInputType()" fullWidth formControlName="password" placeholder="Enter your password">
+                  <button nbSuffix nbButton ghost (click)="toggleShowPassword()">
+                    <nb-icon [icon]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+                             [attr.aria-label]="showPassword ? 'hide password' : 'show password'">
+                    </nb-icon>
+                  </button>
+                </nb-form-field>
+              </div>
+
+            </form>
+          </div>
+
+          <div class="login-part-container__options"></div>
+
+          <button class="login-part-container__sign-in-button" nbButton status="primary" [fullWidth] size="small"
+                  [disabled]="!formGroup.valid" (click)="signIn()"
+          >Sign in</button>
+        </div>
+
+      </div>
+      <div class="view-container__theme" style='background-image: url("assets/images/bgc_1.jpg")'></div>
+    </div>
+  </nb-layout-column>
+</nb-layout>

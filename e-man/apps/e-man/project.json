@@ -12,16 +12,16 @@
       "options": {
         "outputPath": "dist/apps/e-man",
         "browser": "apps/e-man/src/main.ts",
-        "polyfills": ["zone.js"],
         "tsConfig": "apps/e-man/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          {
-            "glob": "**/*",
-            "input": "apps/e-man/public"
-          }
+          "apps/e-man/src/assets"
         ],
-        "styles": ["apps/e-man/src/styles.scss"],
+        "styles": [
+          "libs/shared/styles/styles.scss",
+          "node_modules/@nebular/theme/styles/prebuilt/default.css",
+          "node_modules/ngx-toastr/toastr.css"
+        ],
         "server": "apps/e-man/src/main.server.ts",
         "ssr": {
           "entry": "apps/e-man/src/server.ts"

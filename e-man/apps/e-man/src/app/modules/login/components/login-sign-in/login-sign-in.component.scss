@@ -1,0 +1,130 @@
+@import "libs/shared/styles/styles.scss";
+
+.view-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+
+  &__login-part {
+    grid-area: login-part;
+    display: flex;
+    padding: 64px;
+  }
+
+  &__theme {
+    grid-area: theme;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.login-part-container {
+  display: flex;
+  width: 350px;
+  border: 1px solid $itemBorderColor;
+  border-radius: 5px;
+  padding: 20px;
+  flex-direction: column;
+
+  &__logo {
+    width: 200px;
+
+    &--img {
+      max-width: 100%;
+      height: auto;
+      width: 100%;
+      vertical-align: top;
+      padding: 20px 20px 20px 0;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 1rem 0 0;
+    color: black;
+  }
+
+  &__title-describe {
+    margin-top: 10px;
+
+    &--text {
+      font-weight: 500;
+    }
+
+    &--link {
+      color: $infoStatus;
+
+    }
+  }
+
+  &__form-container {
+    margin-top: 10px;
+
+    input {
+      font-weight: 400;
+      height: 40px;
+    }
+  }
+
+  &__sign-in-button {
+    margin-top: 15px;
+    border-radius: 9999px  !important;
+    width: 100%;
+    text-transform: capitalize !important;
+    height: 40px;
+    font-size: 14px !important;
+  }
+}
+
+form {
+  > div {
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+}
+
+.required:after {
+  content: " *";
+  color: $errorColor;
+}
+
+
+
+@media screen {
+  .view-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "login-part";
+
+    &__login-part {
+      background-color: #F1F5F9;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .view-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "login-part theme";
+
+    &__login-part {
+      background-color: white;
+      justify-content: flex-end;
+    }
+  }
+}
+
+
+::ng-deep nb-layout-column {
+  padding: 0 !important;
+}

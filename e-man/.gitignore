@@ -44,3 +44,4 @@ Thumbs.db
 .github/instructions/nx.instructions.md
 
 .angular
+/apps/e-man/src/app/config/firebase-options.config.ts
